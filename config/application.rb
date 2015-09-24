@@ -22,6 +22,9 @@ require 'open_ishkur'
 
 module OpenIshkur
   class Application < Rails::Application
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+
     # Use EST as our local time zone. (UTC is default)
     config.time_zone = 'Eastern Time (US & Canada)'
 

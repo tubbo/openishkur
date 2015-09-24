@@ -10,6 +10,14 @@ class GenresController < ApplicationController
     respond_with genre
   end
 
+  def new
+    render :new
+  end
+
+  def edit
+    render :edit
+  end
+
   def create
     genre.save
     respond_with genre
@@ -28,7 +36,8 @@ class GenresController < ApplicationController
   private
 
   def edit_params
-    params.require(:genre).permit \
+    params.require(:genre).permit(
       :name, :description, samples: [:artist, :track, :file]
+    )
   end
 end
