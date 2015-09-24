@@ -12,6 +12,7 @@ gem 'draper'
 gem 'simple_form'
 gem 'devise'
 gem 'devise-neo4j'
+gem 'haml-rails'
 
 gem 'sass-rails'
 gem 'coffee-rails'

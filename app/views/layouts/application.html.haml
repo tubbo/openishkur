@@ -1,0 +1,27 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    = title_tag
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header
+      %nav.topbar{ data: { topbar: true } }
+        %ul.title-area
+          %li.name
+            %h1= link_to config.title, root_path
+        %section#search.top-bar-section
+          %ul
+            %li
+              = search_field_tag :query, nil, placeholder: 'Search...'
+      - if content_for? :title
+        .row
+          .large-12.columns
+            %h1= content_for :title
+    %main{ id: page_id, class: page_class }
+      = yield
