@@ -1,5 +1,6 @@
 class GenresController < ApplicationController
   resource :genre
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     respond_with genres
@@ -27,6 +28,7 @@ class GenresController < ApplicationController
   private
 
   def edit_params
-    params.require(:genre).permit :name, :description, :samples
+    params.require(:genre).permit \
+      :name, :description, samples: [:artist, :track, :file]
   end
 end
