@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Genre, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { build :genre }
+
+  it "represents a node on the graph" do
+    expect(subject).to be_valid
+  end
 end
