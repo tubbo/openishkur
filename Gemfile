@@ -2,15 +2,16 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 gem 'rails', '~> 4.2'
-gem 'pg'
+gem 'neo4j'
 gem 'puma'
 gem 'sidekiq'
-gem 'controller_resources'
+gem 'decent_exposure'
 gem 'responders'
 gem 'active_model_serializers'
 gem 'draper'
 gem 'simple_form'
 gem 'devise'
+gem 'devise-neo4j'
 
 gem 'sass-rails'
 gem 'coffee-rails'
@@ -25,8 +26,13 @@ gem 'turbolinks' #, github: 'rails/turbolinks'
 group :development do
   gem 'meta_request'
   gem 'quiet_assets'
-  gem 'spring'
   gem 'web-console', '~> 2.0'
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'spring-commands-sidekiq'
+  gem 'guard-rails'
+  gem 'guard-livereload'
+  gem 'guard-bundler'
 end
 
 group :development, :test do
@@ -37,6 +43,7 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'poltergeist'
 end
 
 group :production do
