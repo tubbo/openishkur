@@ -2,5 +2,6 @@
 module OpenIshkur
   extend ActiveSupport::Autoload
 
-  autoload :Neo4jRefileAttachment
+  autoload :Strategy
+  autoload :Responder
 end

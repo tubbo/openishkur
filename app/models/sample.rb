@@ -8,7 +8,6 @@ class Sample
 
   has_one :out, :genre
 
-  validates :track, presence: true
   validates :file_id, presence: true
 
   before_save :store_file
