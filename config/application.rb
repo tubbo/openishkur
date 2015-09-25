@@ -33,5 +33,7 @@ module OpenIshkur
 
     # Use localhost as mail server (for Devise)
     config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+    config.title = 'OpenIshkur'
   end
 end

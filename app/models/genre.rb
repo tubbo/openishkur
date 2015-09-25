@@ -4,6 +4,8 @@ class Genre
 
   property :name,         type: String
   property :description,  type: String
+  property :created_at,   type: DateTime
+  property :updated_at,   type: DateTime
 
   has_many :in, :samples, type: false
 
@@ -13,10 +15,14 @@ class Genre
   validates :name,        presence: true
   validates :description, presence: true
 
-  accepts_nested_attributes_for :samples
+  # accepts_nested_attributes_for :samples
 
   mappings dynamic: 'false' do
     indexes :name, type: 'string'
+  end
+
+  def self.scoped
+    all
   end
 
   # Return the last updated at in UNIX Epoch time.

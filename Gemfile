@@ -15,6 +15,7 @@ gem 'haml-rails'
 gem 'pundit'
 gem 'refile', require: 'refile/rails'
 gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
 gem 'nested_form'
 
 gem 'sass-rails'
@@ -26,6 +27,7 @@ gem 'autoprefixer-rails'
 gem 'turbolinks' #, github: 'rails/turbolinks'
 gem 'lodash-rails'
 gem 'jquery-tokeninput-rails'
+gem 'font-awesome-sass'
 
 #source 'https://rails-assets.org'
 
@@ -39,6 +41,7 @@ group :development do
   gem 'guard-rails'
   gem 'guard-livereload'
   gem 'guard-bundler'
+  gem 'guard-spring'
 end
 
 group :development, :test do
@@ -61,4 +64,5 @@ group :production do
   gem 'redis-rails'
   gem 'asset_sync'
   gem 'refile-s3'
+  gem 'sidekiq'
 end

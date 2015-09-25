@@ -6,5 +6,7 @@
 @module = (callback) ->
   @modules.push callback
 
-jQuery.on 'ready page:load ajax:complete' ->
-  _.each window.modules, (module) -> module()
+$(document).on 'ready page:load ajax:complete', ->
+  _.each window.modules, (module) ->
+    console.debug 'loading module'
+    module()

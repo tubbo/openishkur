@@ -1,0 +1,17 @@
+house:
+  name: House
+
+techno:
+  name: Techno
+
+trance:
+  name: Trance
+
+breaks:
+  name: Breakbeat
+
+hiphop:
+  name: Hip-Hop
+
+downtempo:
+  name: Downtempo

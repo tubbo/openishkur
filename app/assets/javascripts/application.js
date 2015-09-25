@@ -4,11 +4,11 @@
 //= require lodash
 //= require jquery_nested_form
 //= require jquery.tokeninput
-//= require modules
 //= require turbolinks
+//= require modules
 //= require_self
 //= require_tree .
 
-module(function() {
+$(function() {
   $(document).foundation();
 });

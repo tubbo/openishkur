@@ -1,0 +1,38 @@
+$page-bg: $charcoal;
+
+header {
+  padding-bottom: 25px;
+  background: $page-bg;
+  .top-bar {
+    input {
+      transition: all .5s ease;
+      background: $oil;
+
+      &:focus {
+        width: 40em;
+        background: $tuatara;
+      }
+    }
+  }
+}
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+  background: $oil;
+  color: $smoke;
+
+  &:focus, &:visited {
+    background: $charcoal;
+  }
+}
+
+main {
+  background: $page-bg;
+  min-height: 500px;
+}
+footer {
+  padding-top: 10px;
+  nav {
+    a {
+      display: block;
+    }
+  }
+}

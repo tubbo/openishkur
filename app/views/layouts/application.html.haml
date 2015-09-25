@@ -11,33 +11,20 @@
     = csrf_meta_tags
   %body
     %header
-      %nav.topbar{ data: { topbar: true } }
-        %ul.title-area
-          %li.name
-            %h1= link_to config.title, root_path
-        %section#search.top-bar-section
-          %ul
-            %li.has-dropdown
-              = form_tag url: search_path, method: :get, remote: true do
-                = search_field_tag :query, nil, placeholder: 'Search...'
-              %ul#results.dropdown
-                / Search Results
-        %section#users.top-bar-section
-          %ul.right
-            - if logged_in?
-              %li= link_to current_user.name, current_user
-              %li= link_to t(:sign_out, scope: 'devise.links'), destroy_user_registration_path, method: :delete
-            - else
-              %li= link_to t(:sign_in, scope: 'devise.links'), user_sign_in_path
-              %li= link_to t(:sign_up, scope: 'devise.links'), user_sign_up_path
-      - if content_for? :title
-        .row
-          .large-12.columns
-            %h1= content_for :title
+      = render 'navigation'
+      = render 'title'
+      = render 'flash'
     %main
       = yield
-    %footer
-      %nav
-        = link_to 'source code', "https://github.com/tubbo/open_ishkur"
-        = link_to 'documentation', "https://github.com/tubbo/open_ishkur/wiki"
-        = link_to 'report an issue', "https://github.com/tubbo/open_ishkur/issues/new"
+    %footer.row
+      .about.large-6.columns
+        %h4 about openishkur
+        %p
+          OpenIshkur is an open-source guide to the world of electronic
+          music. Based on #{link_to "Ishkur's Guide", "http://techno.org/electronic-music-guide"}, we aim to show the graph of connections between all kinds of electronic music.
+      .project.large-6.columns
+        %h4 project information
+        %nav
+          = link_to 'source code', "https://github.com/tubbo/open_ishkur"
+          = link_to 'documentation', "https://github.com/tubbo/open_ishkur/wiki"
+          = link_to 'report an issue', "https://github.com/tubbo/open_ishkur/issues/new"

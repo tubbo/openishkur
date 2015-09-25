@@ -1,4 +1,4 @@
-module Brotherly
+module OpenIshkur
   # Standard HTTP responses for the entire application.
   class Responder < ActionController::Responder
     include Responders::FlashResponder

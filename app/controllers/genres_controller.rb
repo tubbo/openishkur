@@ -40,7 +40,8 @@ class GenresController < ApplicationController
 
   def edit_params
     params.require(:genre).permit(
-      :name, :description, samples: [:artist, :track, :file]
+      :name, :description, :antecedents, :descendants,
+      samples: [:artist, :track, :file]
     )
   end
 end

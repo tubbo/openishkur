@@ -16,10 +16,20 @@ module ApplicationHelper
   end
 
   def link_to_modal(text, href, options = {})
+    data = options[:data] || {}
     link_to text, href, options.merge(
       data: data.merge(
-        'reveal-id' => '#editor'
+        'reveal-id' => 'editor',
+        'reveal-ajax' => true
       )
     )
+  end
+
+  def logged_in?
+    current_user.present?
+  end
+
+  def config
+    Rails.application.config
   end
 end

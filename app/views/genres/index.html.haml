@@ -1,12 +1,19 @@
 - cache genre_graph_cache_key do
   #graph
     .row
-      .large-12.columns
-        = link_to_modal 'New Genre', new_genre_path, class: 'button'
-    - genres.each do |genre|
-      - cache genre.node_cache_key do
-        = link_to genre.name, genre, remote: true, class: 'node button'
+      .large-9.columns
+        &nbsp;
+      .large-3.columns
+        - if logged_in?
+          = link_to_modal 'New Genre', new_genre_path, class: 'small button'
+    .row
+      - genres.each do |genre|
+        - cache genre.node_cache_key do
+          = link_to genre.name, genre, remote: true, class: 'node button'
+      - if genres.empty?
+        .large-12.columns
+          %p.empty There are no genres in the graph.
 #genre
   / Genre details
 #editor.reveal-modal{ data: { reveal: true } }
-  / Dialog box
+  / editor

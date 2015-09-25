@@ -5,10 +5,11 @@ class Sample
   include Neo4j::ActiveNode
   include Refile::Attachment
 
-  property :artist,   type: String
-  property :track,    type: String
-  property :file_id,  type: String
-  property :number,   type: Integer
+  property :artist,     type: String
+  property :track,      type: String
+  property :file_id,    type: String
+  property :number,     type: Integer
+  property :created_at, type: DateTime
 
   has_one :out, :genre
 

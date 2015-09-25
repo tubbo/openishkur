@@ -20,7 +20,7 @@ module OpenIshkur
         authorize r
       end.decorate
     rescue
-      super.decorate
+      super
     end
   end
 end
