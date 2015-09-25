@@ -6,7 +6,7 @@ FactoryGirl.define do
 
   factory :sample do
     genre
-    artist Faker::Lorem.words(2).titleize
-    track Faker::Lorem.words(3).titleize
+    artist Faker::Lorem.words(2).join("\s")
+    track Faker::Lorem.words(3).join("\s")
   end
 end
