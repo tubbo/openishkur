@@ -2,8 +2,6 @@
   = simple_nested_form_for genre do |f|
     = f.input :name
     = f.input :description, as: :text
-    - f.simple_fields_for :samples do |s|
-      = s.input :artist
-      = s.input :track
-      = s.input :file, as: :attachment
+    - f.simple_fields_for :samples do |sample_fields|
+      = render 'samples/fields', form: sample_fields
     = f.submit

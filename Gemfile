@@ -16,6 +16,7 @@ gem 'haml-rails'
 gem 'pundit'
 gem 'refile', require: 'refile/rails'
 gem 'refile-s3'
+gem 'elasticsearch-rails'
 
 gem 'sass-rails'
 gem 'coffee-rails'

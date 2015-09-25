@@ -149,6 +149,7 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0)
+    elasticsearch-rails (0.1.7)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -571,6 +572,7 @@ DEPENDENCIES
   devise
   devise-neo4j
   draper
+  elasticsearch-rails
   factory_girl_rails
   faker
   foundation-rails
