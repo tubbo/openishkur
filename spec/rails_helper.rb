@@ -8,6 +8,9 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rspec'
 require 'capybara/poltergeist'
+require 'faker'
+require 'pundit/rspec'
+require 'devise/test_helpers'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -21,7 +24,6 @@ require 'capybara/poltergeist'
 # of increasing the boot-up time by auto-requiring all files in the support
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
-#
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Use Poltergeist as the JS driver for all Capybara tests
@@ -44,15 +46,15 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.before do
-    if config[:js]
-      Capybara.current_driver = Capybara.javascript_driver
-    end
+    Capybara.current_driver = Capybara.javascript_driver if config[:js]
   end
 
   config.after do
-    if config[:js]
-      Capybara.current_driver = Capybara.default_driver
-    end
+    Capybara.current_driver = Capybara.default_driver if config[:js]
+    Warden.test_reset!
   end
+
+  config.include Devise::TestHelpers, type: :controller
+  config.include User::FeatureTestHelpers, type: :feature
 end
 

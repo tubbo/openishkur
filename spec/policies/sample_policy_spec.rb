@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe SamplePolicy do
+RSpec.describe SamplePolicy, type: :policy do
 
-  let(:user) { User.new }
+  let(:user) { build :user }
 
   subject { described_class }
 

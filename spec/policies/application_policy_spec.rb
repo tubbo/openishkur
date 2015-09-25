@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe GenrePolicy, type: :policy do
-
+RSpec.describe ApplicationPolicy, type: :policy do
   let(:user) { build :user }
 
   subject { described_class }
