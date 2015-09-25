@@ -43,6 +43,8 @@ end
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rubocop'
+  gem 'yard'
 end
 
 group :test do

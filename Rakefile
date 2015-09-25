@@ -7,7 +7,7 @@ Rails.application.load_tasks
 
 require 'elasticsearch/rails/tasks/import'
 
-begin
+# begin
   require 'rspec/core/rake_task'
   require 'rubocop/rake_task'
   require 'yard'
@@ -17,6 +17,6 @@ begin
   RuboCop::RakeTask.new :lint
 
   YARD::Rake::YardocTask.new :doc
-rescue LoadError
-  # NOTE: Development tasks are not loaded on production.
-end
+# rescue LoadError
+#   # NOTE: Development tasks are not loaded on production.
+# end
