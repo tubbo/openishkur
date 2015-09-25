@@ -1,7 +1,9 @@
+# Samples API
 class SamplesController < ApplicationController
   resource :sample, ancestor: :genre
   before_action :authenticate_user!
 
+  # Upload a new Sample.
   def new
     render :new
   end

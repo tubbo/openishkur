@@ -17,8 +17,11 @@
             %h1= link_to config.title, root_path
         %section#search.top-bar-section
           %ul
-            %li
-              = search_field_tag :query, nil, placeholder: 'Search...'
+            %li.has-dropdown
+              = form_tag url: search_path, method: :get, remote: true do
+                = search_field_tag :query, nil, placeholder: 'Search...'
+              %ul#results.dropdown
+                / Search Results
         %section#users.top-bar-section
           %ul.right
             - if logged_in?

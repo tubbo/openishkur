@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :genres do
     resources :samples, only: [:create, :destroy]
   end
+  resource :search, only: [:show]
   root to: 'genres#index'
 end

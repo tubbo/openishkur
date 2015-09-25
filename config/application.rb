@@ -6,7 +6,6 @@ require "rails"
   action_controller
   action_view
   action_mailer
-  active_job
   sprockets
   neo4j
 ).each do |framework|

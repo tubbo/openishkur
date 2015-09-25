@@ -2,6 +2,13 @@
   = simple_nested_form_for genre do |f|
     = f.input :name
     = f.input :description, as: :text
+
     - f.simple_fields_for :samples do |sample_fields|
       = render 'samples/fields', form: sample_fields
+      = sample_fields.link_to_remove 'Remove Sample'
+    = f.link_to_add t(:add, scope: 'genre.form.samples'), :samples
+
+    = f.input :antecedents, as: :tags
+    = f.input :descendants, as: :tags
+
     = f.submit

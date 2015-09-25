@@ -1,11 +1,14 @@
+# Genres API
 class GenresController < ApplicationController
   resource :genre
   before_action :authenticate_user!, except: [:index, :show]
 
+  # Index page, all genres graph
   def index
     respond_with genres
   end
 
+  # Show a single genre's details
   def show
     respond_with genre
   end
