@@ -2,6 +2,10 @@ class SamplesController < ApplicationController
   resource :sample, ancestor: :genre
   before_action :authenticate_user!
 
+  def new
+    render :new
+  end
+
   def create
     sample.save
     respond_with sample

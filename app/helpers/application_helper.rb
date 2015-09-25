@@ -15,11 +15,11 @@ module ApplicationHelper
     content_for :title, new_title
   end
 
-  def page_class
-    controller.action_name
-  end
-
-  def page_id
-    controller.controller_name
+  def link_to_modal(text, href, options = {})
+    link_to text, href, options.merge(
+      data: data.merge(
+        'reveal-id' => '#editor'
+      )
+    )
   end
 end

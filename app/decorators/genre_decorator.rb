@@ -1,13 +1,7 @@
 class GenreDecorator < Draper::Decorator
   delegate_all
 
-  # Define presentation-specific methods here. Helpers are accessed through
-  # `helpers` (aka `h`). You can override attributes, for example:
-  #
-  #   def created_at
-  #     helpers.content_tag :span, class: 'time' do
-  #       object.created_at.strftime("%a %m/%d/%y")
-  #     end
-  #   end
-
+  def node_cache_key
+    "#{h.genre_graph_cache_key}/#{model.cache_key}"
+  end
 end

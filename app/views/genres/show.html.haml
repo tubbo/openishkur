@@ -1,0 +1,18 @@
+- cache genre do
+  .description.row
+    .large-12.columns
+      = simple_format genre.description
+  .samples.row
+    .large-12.columns
+      - genre.samples.each do |sample|
+        = link_to sample.file, class: 'sample' do
+          = sample.number
+          = audio_tag sample.file
+
+        = link_to icon(:stop), '#', class: 'stop-link'
+  - if logged_in?
+    .controls.row
+      .large-12.columns
+        %nav
+          = link_to_modal 'Edit', edit_genre_path(genre)
+          = link_to_modal 'Upload Sample', new_genre_sample_path(genre)

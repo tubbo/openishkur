@@ -1,0 +1,12 @@
+- cache genre_graph_cache_key do
+  #graph
+    .row
+      .large-12.columns
+        = link_to_modal 'New Genre', new_genre_path, class: 'button'
+    - genres.each do |genre|
+      - cache genre.node_cache_key do
+        = link_to genre.name, genre, remote: true, class: 'node button'
+#genre
+  / Genre details
+#editor.reveal-modal{ data: { reveal: true } }
+  / Dialog box
