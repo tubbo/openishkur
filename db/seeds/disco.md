@@ -1,6 +1,7 @@
 ---
 name: Disco
-descendants: house
+descendants:
+  - house
 ---
 
 Not just any Disco, but electro boogie! The synthesized direction Disco

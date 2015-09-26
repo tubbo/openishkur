@@ -9,8 +9,8 @@ class Genre
     property :approved, type: Boolean
     property :approved_on, type: Date
 
-    has_one :out, :genre
-    has_one :out, :user
+    has_one :out, :genre, type: :belongs_to
+    has_one :out, :user, type: :belongs_to
 
     validates :name,        presence: true
     validates :description, presence: true

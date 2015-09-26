@@ -3,7 +3,7 @@ name: House
 antecedents:
   - dub
   - disco
-  - italo
+  - italo_disco
 descendants:
   - acid_house
   - new_york_garage

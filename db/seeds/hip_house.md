@@ -1,6 +1,7 @@
 ---
 name: Hip-House
-antecedents: house
+antecedents:
+  - house
 ---
 
 It's more popular than you think; people are just wack bitches and don't

@@ -1,6 +1,7 @@
 ---
 name: Acid
-antecedents: house
+antecedents:
+  - house
 ---
 
 Raves weren't actual raves until this came along. 1988, the Summer of

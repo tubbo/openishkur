@@ -1,7 +1,9 @@
 ---
 name: Garage
-antecedents: house
-descendants: house, speed_garage
+antecedents:
+  - house
+descendants:
+  - house
 ---
 
 Around the same time that gay black people were inventing House in

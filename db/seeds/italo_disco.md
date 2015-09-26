@@ -1,7 +1,9 @@
 ---
 name: Italo Disco
-antecedents: disco
-descendants: house
+antecedents:
+  - disco
+descendants:
+  - house
 ---
 
 There was a big backlash to everything Disco in America in 1980. In

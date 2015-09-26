@@ -1,9 +1,11 @@
 module OpenIshkur
   module Seeds
     class Collection
+      include Enumerable
+
       def initialize(path)
         @path = path
-        @matcher = File.join path, '*.yml'
+        @matcher = File.join path, '*.md'
       end
 
       def all

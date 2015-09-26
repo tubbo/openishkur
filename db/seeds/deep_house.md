@@ -2,8 +2,6 @@
 name: Deep House
 antecedents:
   - house
-descendants:
-  - funky
 ---
 
 This genre is to House music like Superman is to the Superfriends:

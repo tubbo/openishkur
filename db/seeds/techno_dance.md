@@ -2,12 +2,6 @@
 name: Techno Dance
 antecedents:
   - house
-descendants:
-  - anthem_house
-  - vocal_house
-  - eurodance
-  - progressive_house
-  - freestyle
 ---
 
 And then all of a sudden, without word or warning, electronic music was

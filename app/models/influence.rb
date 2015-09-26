@@ -11,4 +11,8 @@ class Influence
   validates :direction, presence: true, inclusion: {
     in: %w(antecedent descendant)
   }
+
+  class << self
+    alias_method :scoped, :all
+  end
 end

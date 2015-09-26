@@ -3,7 +3,7 @@ module OpenIshkur
     class Model
       include ActiveModel::Model
 
-      delegate :content, to: :preamble
+      delegate :content, :metadata, to: :seed
 
       attr_reader :record
 
@@ -13,27 +13,36 @@ module OpenIshkur
       validate :name_is_not_taken
 
       def attributes
-        metadata.slice :name, :description
+        {
+          name: metadata[:name],
+          description: content
+        }
       end
 
       def connections
-        [:antecedents, :descendants].flat_map do |type|
-          metadata[type].split(", ").map do |name|
+        [:antecedents, :descendants].select do |type|
+          metadata[type].present?
+        end.map do |type|
+          metadata[type].map do |to_name|
             Connection.new(
-              from_record: record,
-              to_record_name: name,
+              from_record: seed.record,
+              to_record_name: to_name,
               type: type
             )
           end
-        end
+        end.flatten
       end
 
       def save
-        @record ||= Genre.create! attributes
+        valid? && create && persisted?
       end
 
       def persisted?
-        @record.present?
+        record.present? && record.persisted?
+      end
+
+      def name
+        File.basename(path).gsub(/\.md/, '')
       end
 
       private
@@ -42,12 +51,8 @@ module OpenIshkur
         (metadata[:antecedents] + metadata[:descendants]).flatten
       end
 
-      def metadata
-        preamble.metadata.with_indifferent_access
-      end
-
-      def preamble
-        @preamble ||= Preamble.load path
+      def seed
+        @seed ||= Seed.find name
       end
 
       def name_is_not_taken
@@ -55,6 +60,13 @@ module OpenIshkur
           errors.add :name, 'is already a genre'
         end
       end
+
+      def create
+        @record = Genre.create! attributes
+        errors[:genre] << record.errors unless record.persisted?
+        persisted?
+      end
+
     end
   end
 end

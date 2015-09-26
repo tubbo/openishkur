@@ -10,15 +10,17 @@ module OpenIshkur
     # Generate a policy scope for all collection resources, then
     # decorate the finished object relation.
     def collection_resource
-      policy_scope super
+      super
     end
 
     # Attempt to authorize a given resource using its Pundit policy,
     # then inject +Draper::Decoratable+ so that 
     def resource
       super.tap do |model|
-        authorize model
-      end.decorate
+        model.decorate
+      end
+    rescue
+      super
     end
   end
 end
