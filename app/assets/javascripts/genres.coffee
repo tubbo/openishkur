@@ -7,3 +7,6 @@ jQuery ->
   $('#graph .node')
     .on 'ajax:success', (event, response) ->
       $('#genre').html(response)
+
+
+  $('#graph').makeGraph '/genres.json'

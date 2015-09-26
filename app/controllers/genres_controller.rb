@@ -12,7 +12,10 @@ class GenresController < ApplicationController
 
   # Index page, all genres graph
   def index
-    respond_with genres
+    respond_to do |format|
+      format.html # show.html.haml
+      format.json # show.json.jbuilder
+    end
   end
 
   # Show a single genre's details

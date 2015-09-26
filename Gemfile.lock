@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     CFPropertyList (2.3.1)
     actionmailer (4.2.4)
@@ -24,8 +25,6 @@ GEM
     active_attr (0.8.5)
       activemodel (>= 3.0.2, < 5.0)
       activesupport (>= 3.0.2, < 5.0)
-    active_model_serializers (0.9.3)
-      activemodel (>= 3.2)
     activejob (4.2.4)
       activesupport (= 4.2.4)
       globalid (>= 0.3.0)
@@ -458,6 +457,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.4)
       sprockets-rails
+    rails-assets-vis (4.8.2)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -604,7 +604,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers
   asset_sync
   autoprefixer-rails
   capybara
@@ -639,6 +638,7 @@ DEPENDENCIES
   quiet_assets
   rack-cache
   rails (~> 4.2)
+  rails-assets-vis!
   redis-rails
   refile
   refile-s3

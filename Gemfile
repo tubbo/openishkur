@@ -6,7 +6,6 @@ gem 'neo4j'
 gem 'puma'
 gem 'decent_exposure'
 gem 'responders'
-gem 'active_model_serializers'
 gem 'draper'
 gem 'simple_form'
 gem 'devise'
@@ -30,7 +29,9 @@ gem 'lodash-rails'
 gem 'jquery-tokeninput-rails'
 gem 'font-awesome-sass'
 
-#source 'https://rails-assets.org'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-vis'
+end
 
 group :development do
   gem 'meta_request'
