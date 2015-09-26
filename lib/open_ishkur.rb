@@ -4,10 +4,11 @@ module OpenIshkur
 
   autoload :Strategy
   autoload :Responder
-  autoload :Seed
+  autoload :Seeds
 
-  def self.seed_files
-    Dir.glob File.join(Rails.root, 'db', 'seeds', '*.yml')
+  def self.eager_load!
+    Seeds.eager_load!
+    super
   end
 
   def self.seed!
