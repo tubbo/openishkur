@@ -31,6 +31,7 @@ class User
     index :confirmation_token
     property :confirmed_at, type: DateTime
     property :confirmation_sent_at, type: DateTime
+    property :unconfirmed_email, type: String
 
     ## Lockable
     property :failed_attempts, type: Integer, default: 0

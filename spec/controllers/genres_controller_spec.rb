@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe GenresController, type: :controller do
-  let :user do
-    create :user
-  end
-
   let :genre do
     create :genre
   end
@@ -13,7 +9,13 @@ RSpec.describe GenresController, type: :controller do
     { name: 'new genre' }
   end
 
-  before { sign_in user }
+  let :user do
+    create :user
+  end
+
+  before do
+    sign_in!
+  end
 
   describe "GET #index" do
     it "returns http success" do
@@ -43,7 +45,7 @@ RSpec.describe GenresController, type: :controller do
     end
   end
 
-  describe "GET #create" do
+  describe "POST #create" do
     it "returns http success" do
       post :create, genre: genre_params
       expect(response).to have_http_status(:success)
@@ -53,14 +55,14 @@ RSpec.describe GenresController, type: :controller do
   describe "GET #update" do
     it "returns http success" do
       put :update, id: genre, genre: genre_params
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(:redirect)
     end
   end
 
   describe "GET #destroy" do
     it "returns http success" do
       delete :destroy, id: genre
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(:redirect)
     end
   end
 end

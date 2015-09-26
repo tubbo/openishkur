@@ -19,8 +19,6 @@ module OpenIshkur
       super.tap do |r|
         authorize r
       end.decorate
-    rescue
-      super
     end
   end
 end

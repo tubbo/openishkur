@@ -1,4 +1,13 @@
 en:
+  neo4j:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              taken: has already been taken
+            email:
+              taken: address has been taken
   edit: Edit
   sample: "Sample %{number}"
   stop: Stop

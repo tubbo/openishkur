@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe SampleDecorator do
+RSpec.describe SampleDecorator do
 end

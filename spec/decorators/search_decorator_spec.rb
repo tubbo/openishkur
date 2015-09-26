@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe SearchDecorator do
+RSpec.describe SearchDecorator do
 end

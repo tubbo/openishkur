@@ -1,5 +1,8 @@
 # Search all genres
 class SearchesController < ApplicationController
+  skip_after_action :verify_authorized
+  skip_after_action :verify_policy_scoped
+
   # GET /search?q=genre+name
   def show
     respond_to do |format|

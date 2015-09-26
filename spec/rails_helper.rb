@@ -45,16 +45,9 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
-  config.before do
-    Capybara.current_driver = Capybara.javascript_driver if config[:js]
-  end
+  config.include FactoryGirl::Syntax::Methods
 
-  config.after do
-    Capybara.current_driver = Capybara.default_driver if config[:js]
-    Warden.test_reset!
-  end
-
-  config.include Devise::TestHelpers, type: :controller
-  config.include User::FeatureTestHelpers, type: :feature
+  config.include User::ControllerTestHelpers, type: :controller
+  config.include User::FeatureTestHelpers,    type: :feature
 end
 

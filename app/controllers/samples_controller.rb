@@ -1,5 +1,6 @@
 # Samples API
 class SamplesController < ApplicationController
+  expose :genre
   resource :sample, ancestor: :genre
   before_action :authenticate_user!
 
