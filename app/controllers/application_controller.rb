@@ -12,13 +12,14 @@ class ApplicationController < ActionController::Base
 
   decent_configuration do
     strategy OpenIshkur::Strategy
+    attributes :edit_params
   end
 
   layout :use_layout?
 
   rescue_from Pundit::NotAuthorizedError, with: :unauthorized
 
-  after_action :populate_flash_headers
+  after_action :populate_headers
   after_action :verify_authorized, unless: :devise?
   after_action :verify_policy_scoped, unless: :devise?
 
@@ -33,7 +34,7 @@ class ApplicationController < ActionController::Base
     request.xhr? ? false : 'application'
   end
 
-  def populate_flash_headers
+  def populate_headers
     flash.each do |type, message|
       request.env["X-Flash-#{type.titleize}"] = message
     end

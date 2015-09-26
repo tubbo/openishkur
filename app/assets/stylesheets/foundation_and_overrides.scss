@@ -1485,12 +1485,9 @@ $reveal-modal-bg: $body-bg;
 // $include-table-visibility-classes: true;
 // $include-legacy-visibility-classes: true;
 
-@import 'foundation';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import 'foundation';
 @import 'layout';
 @import 'genres';
-
-.notice {
-  @extend .success
-}
+@import 'samples';

@@ -1,4 +1,4 @@
-module ->
+jQuery ->
   autocomplete = (event) ->
     if $('#search input').val().length >= 3
       $('#search form').trigger 'submit.rails'

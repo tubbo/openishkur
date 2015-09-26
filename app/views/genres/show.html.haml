@@ -1,17 +1,27 @@
+- title genre.name
 - cache genre do
   .name.row
     .large-10.columns
       %h2= genre.name
     .large-2.columns
-      = link_to_modal icon('pencil'), edit_genre_path(genre), class: 'tiny button', title: 'Edit' if logged_in?
+      - if logged_in?
+        = link_to_modal icon('pencil'), edit_genre_path(genre), class: 'tiny button has-tip', title: t(:edit)
   .description.row
     .large-12.columns
       = genre.description
   .samples.row
     .large-12.columns
       - genre.samples.each do |sample|
-        = link_to sample.file, class: 'sample', title: "Sample #{sample.number}" do
+        = link_to sample.href, class: 'sample', title: t(:sample, number: sample.number), data: { artist: sample.artist, track: sample.track } do
           = sample.number
           = audio_tag sample.file, loop: true, autoplay: true, controls: false
-      = link_to icon('stop'), '#', class: 'stop-link', title: 'Stop'
-      = link_to icon('plus'), new_genre_sample_path(genre) if logged_in?
+      = link_to icon('stop'), '#', class: 'stop has-tip', title: t(:stop)
+      - if logged_in?
+        = link_to icon('plus'), new_genre_sample_path(genre), class: 'has-tip' title: t(:add)
+  .current-sample.row
+    .large-2.columns
+      %p= t(:artist)
+      %p= t(:track)
+    .large-10.columns
+      #artist &nbsp;
+      #track &nbsp;

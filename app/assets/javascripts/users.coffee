@@ -1,4 +1,4 @@
-module ->
+jQuery ->
   $('#editor a').on 'ajax:success', (event, response) ->
     $('#editor').html(response)
   $('#new_user')

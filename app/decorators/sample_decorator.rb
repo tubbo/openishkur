@@ -8,4 +8,8 @@ class SampleDecorator < Draper::Decorator
   def track
     model.track || "???"
   end
+
+  def href
+    "#" + model.number
+  end
 end

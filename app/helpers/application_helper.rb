@@ -12,6 +12,7 @@ module ApplicationHelper
   end
 
   def title(new_title)
+    request.env["X-Application-Title"] = new_title
     content_for :title, new_title
   end
 
