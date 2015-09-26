@@ -34,6 +34,10 @@ module OpenIshkur
     # Use localhost as mail server (for Devise)
     config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
+    # Use this as the app title
     config.title = 'OpenIshkur'
+
+    # Customize location of the database based on Rails env
+    config.neo4j.storage_path = "#{config.root}/db/neo4j-#{Rails.env}"
   end
 end

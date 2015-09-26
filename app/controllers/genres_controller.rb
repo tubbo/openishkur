@@ -10,6 +10,8 @@ class GenresController < ApplicationController
     Genre.find(params[:id]).decorate
   end
 
+  expose :influences
+
   # Index page, all genres graph
   def index
     respond_to do |format|
