@@ -1,20 +1,9 @@
 # Genres API
 class GenresController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-
-  expose :genres do
-    Genre.all.to_a.map(&:decorate)
-  end
-
-  expose :genre do
-    Genre.find(params[:id]).decorate
-  end
-
+  expose :genres
+  expose :genre
   expose :revision, ancestor: :genre
-
-  expose :influences do
-    Influence.all
-  end
+  expose :influences
 
   # Index page, all genres graph
   def index

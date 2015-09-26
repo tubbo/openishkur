@@ -9,53 +9,55 @@ RSpec.describe GenresController, type: :controller do
     { name: 'new genre' }
   end
 
-  let :user do
-    create :user
-  end
-
-  before do
-    sign_in!
-  end
-
   describe "GET #index" do
+    before { get :index }
+
     it "returns http success" do
-      get :index
       expect(response).to have_http_status(:success)
+    end
+
+    it "renders genre graph" do
+      expect(response).to render_template('genres/index')
     end
   end
 
   describe "GET #show" do
+    before { get :show, id: genre.id }
+
     it "returns http success" do
-      get :show, id: genre.id
       expect(response).to have_http_status(:success)
+    end
+
+    it "renders genre details" do
+      expect(assigns(:genre)).to eq(genre)
+      expect(response).to render_template('genres/show')
     end
   end
 
   describe "GET #new" do
+    before { get :new }
+
     it "returns http success" do
-      get :new
       expect(response).to have_http_status(:success)
     end
-  end
 
-  describe "GET #edit" do
-    it "returns http success" do
-      get :edit, id: genre.id
-      expect(response).to have_http_status(:success)
+    it "renders new genre form" do
+      expect(response).to render_template('genres/new')
     end
   end
 
   describe "POST #create" do
-    it "returns http success" do
+    before do
       post :create, genre: genre_params
+    end
+
+    it "returns http success" do
       expect(response).to have_http_status(:success)
     end
-  end
 
-  describe "GET #update" do
-    it "returns http success" do
-      put :update, id: genre, genre: genre_params
-      expect(response).to have_http_status(:redirect)
+    it "creates a new genre" do
+      expect(assigns(:genre)).to be_valid
+      expect(assigns(:genre)).to be_persisted
     end
   end
 
@@ -63,6 +65,10 @@ RSpec.describe GenresController, type: :controller do
     it "returns http success" do
       delete :destroy, id: genre
       expect(response).to have_http_status(:redirect)
+    end
+
+    it "deletes a genre" do
+      expect(controller.genre).to be_destroyed
     end
   end
 end
