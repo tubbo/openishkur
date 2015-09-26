@@ -2,7 +2,9 @@
 //= require jquery_ujs
 //= require foundation
 //= require lodash
+//= require vis
 //= require jquery_nested_form
+//= require refile
 //= require jquery.tokeninput
 //= require jquery.turbolinks
 //= require turbolinks

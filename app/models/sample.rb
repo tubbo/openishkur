@@ -1,10 +1,13 @@
+require 'refile/attachment/neo4j'
+
 # An uploaded MP3 file that serves as an exemplary work for a given
 # Genre. Usually no more than 30 seconds in length, Samples are looped
 # indefinitely when a user clicks on them.
 class Sample
   include Neo4j::ActiveNode
+  include Draper::Decoratable
 
-  extend Refile::Attachment
+  extend Refile::Neo4j::Attachment
 
   property :artist,     type: String
   property :track,      type: String
@@ -18,7 +21,6 @@ class Sample
 
   before_validation :generate_number
 
-  validates :file, presence: true
   validates :number, presence: true, numericality: true
 
   private

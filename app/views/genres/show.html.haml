@@ -12,16 +12,15 @@
   .samples.row
     .large-12.columns
       - genre.samples.each do |sample|
-        = link_to sample.href, class: 'sample', title: t(:sample, number: sample.number), data: { artist: sample.artist, track: sample.track } do
-          = sample.number
-          = audio_tag sample.file, loop: true, autoplay: true, controls: false
-      = link_to icon('stop'), '#', class: 'stop has-tip', title: t(:stop)
+        = render sample
+      - if genre.samples.any?
+        = link_to icon('stop'), '#', class: 'stop has-tip', title: t(:stop)
       - if logged_in?
-        = link_to icon('plus'), new_genre_sample_path(genre), class: 'has-tip' title: t(:add)
+        = link_to icon('plus'), new_genre_sample_path(genre), class: 'has-tip', title: t(:add)
   .current-sample.row
     .large-2.columns
-      %p= t(:artist)
-      %p= t(:track)
+      .part= t(:artist)
+      .part= t(:track)
     .large-10.columns
       #artist &nbsp;
       #track &nbsp;

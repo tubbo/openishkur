@@ -1,4 +1,4 @@
-.sample {
+.sample, .stop {
   audio {
     display: none;
   }
@@ -14,5 +14,15 @@
   &.active {
     color: white;
     background: gray;
+  }
+
+  .label {
+    display: none;
+  }
+}
+
+.current-sample {
+  .part {
+    display: none;
   }
 }

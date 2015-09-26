@@ -10,6 +10,6 @@ class SampleDecorator < Draper::Decorator
   end
 
   def href
-    "#" + model.number
+    "#" + model.number.to_s
   end
 end

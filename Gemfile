@@ -16,6 +16,7 @@ gem 'refile', require: 'refile/rails'
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 gem 'nested_form'
+gem 'jbuilder'
 
 gem 'sass-rails'
 gem 'coffee-rails'

@@ -12,6 +12,8 @@ en:
   sample: "Sample %{number}"
   stop: Stop
   add: Add
+  artist: Artist
+  track: Track
   devise:
     links:
       sign_out: Log Out
