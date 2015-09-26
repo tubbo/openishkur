@@ -19,8 +19,6 @@ class ApplicationController < ActionController::Base
   rescue_from Neo4j::RecordNotFound,      with: :not_found
 
   after_action :populate_headers
-  # after_action :verify_authorized, unless: :devise?
-  # after_action :verify_policy_scoped, only: [:index], unless: :devise?
 
   def unauthorized(exception)
     logger.error exception.message
@@ -42,9 +40,5 @@ class ApplicationController < ActionController::Base
     flash.each do |type, message|
       request.env["X-Flash-#{type.titleize}"] = message
     end
-  end
-
-  def devise?
-    self.class.name =~ /Devise/
   end
 end

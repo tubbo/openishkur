@@ -1,7 +1,13 @@
 # Genres API
 class GenresController < ApplicationController
-  expose :genres
-  expose :genre
+  expose :genres do
+    Genre.all
+  end
+
+  expose :genre do
+    Genre.find(params[:id])
+  end
+
   expose :revision, ancestor: :genre
   expose :influences
 
@@ -19,13 +25,11 @@ class GenresController < ApplicationController
   end
 
   def new
-    authorize genre
     render :new
   end
 
   def create
     @genre = Genre.new edit_params
-    authorize @genre
     @genre.save
     respond_with @genre
   end

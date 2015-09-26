@@ -17,6 +17,7 @@ gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 gem 'nested_form'
 gem 'jbuilder'
+gem 'preamble'
 
 gem 'sass-rails'
 gem 'coffee-rails'

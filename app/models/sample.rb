@@ -5,7 +5,6 @@ require 'refile/attachment/neo4j'
 # indefinitely when a user clicks on them.
 class Sample
   include Neo4j::ActiveNode
-  include Draper::Decoratable
 
   extend Refile::Neo4j::Attachment
 

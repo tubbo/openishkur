@@ -1,16 +1,30 @@
 module OpenIshkur
-  # Library for seeding data into the database.
   module Seeds
-    extend ActiveSupport::Autoload
-
     autoload :Collection
-    autoload :Seed
+    autoload :Model
+    autoload :Connection
 
-    # Repopulate the database with seed data.
-    #
-    # @return [Boolean]
-    def self.populate!
-      Collection.repopulate
+    def self.path
+      File.join Rails.root, 'db', 'seeds'
+    end
+
+    def self.models
+      @models ||= Collection.new path
+    end
+
+    def self.connections
+      models.flat_map(&:connections)
+    end
+
+    def self.install
+      puts "Seeding genre data"
+      models.each do |model|
+        model.save
+      end
+      puts "Creating graph connections"
+      connections.each do |connection|
+        connection.save
+      end
     end
   end
 end

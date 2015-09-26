@@ -1,7 +1,6 @@
 class Genre
   include Neo4j::ActiveNode
   include Elasticsearch::Model
-  include Draper::Decoratable
 
   property :name,         type: String
   property :description,  type: String

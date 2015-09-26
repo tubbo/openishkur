@@ -16,8 +16,8 @@ module OpenIshkur
     # Attempt to authorize a given resource using its Pundit policy,
     # then inject +Draper::Decoratable+ so that 
     def resource
-      super.tap do |r|
-        authorize r
+      super.tap do |model|
+        authorize model
       end.decorate
     end
   end

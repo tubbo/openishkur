@@ -116,3 +116,6 @@ Session.vim
 # Ignore cache folders and source maps
 .sass-cache
 *.css.map
+
+## Neo4J
+/db/neo4j

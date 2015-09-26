@@ -1,4 +1,4 @@
-class SampleDecorator < Draper::Decorator
+class SampleDecorator < ApplicationDecorator
   delegate_all
 
   def artist

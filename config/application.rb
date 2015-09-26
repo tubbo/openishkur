@@ -37,7 +37,9 @@ module OpenIshkur
     # Use this as the app title
     config.title = 'OpenIshkur'
 
-    # Customize location of the database based on Rails env
-    config.neo4j.storage_path = "#{config.root}/db/neo4j-#{Rails.env}"
+    # Configure Neo4J
+    config.neo4j.session_type = :server_db
+    config.neo4j.session_path = ENV['NEO4J_URL'] || 'http://localhost:7474'
+    config.neo4j.storage_path = File.join(config.root, 'db', Rails.env)
   end
 end

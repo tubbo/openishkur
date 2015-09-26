@@ -1,8 +1,7 @@
 # Samples API
 class SamplesController < ApplicationController
   expose :genre
-  resource :sample, ancestor: :genre
-  before_action :authenticate_user!
+  expose :sample, ancestor: :genre
 
   # Upload a new Sample.
   def new
@@ -10,8 +9,8 @@ class SamplesController < ApplicationController
   end
 
   def create
-    sample.save
-    respond_with sample
+    @genre = genre.samples.create(edit_params)
+    respond_with @sample
   end
 
   def destroy

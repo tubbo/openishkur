@@ -6,7 +6,7 @@ RSpec.describe GenresController, type: :controller do
   end
 
   let :genre_params do
-    { name: 'new genre' }
+    { name: 'new genre', description: 'test' }
   end
 
   describe "GET #index" do
@@ -29,7 +29,7 @@ RSpec.describe GenresController, type: :controller do
     end
 
     it "renders genre details" do
-      expect(assigns(:genre)).to eq(genre)
+      expect(controller.genre).to eq(genre)
       expect(response).to render_template('genres/show')
     end
   end
@@ -51,8 +51,9 @@ RSpec.describe GenresController, type: :controller do
       post :create, genre: genre_params
     end
 
-    it "returns http success" do
-      expect(response).to have_http_status(:success)
+    it "redirects to show path" do
+      expect(response).to have_http_status(:redirect)
+      expect(response).to redirect_to(assigns(:genre))
     end
 
     it "creates a new genre" do
@@ -63,12 +64,12 @@ RSpec.describe GenresController, type: :controller do
 
   describe "GET #destroy" do
     it "returns http success" do
-      delete :destroy, id: genre
+      delete :destroy, id: genre.id
       expect(response).to have_http_status(:redirect)
     end
 
     it "deletes a genre" do
-      expect(controller.genre).to be_destroyed
+      expect { controller.genre }.to raise_error
     end
   end
 end
