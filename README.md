@@ -77,3 +77,5 @@ when making a pull request please ensure your changes are properly
 tested and the build has not broken.
 
 [ishkursguide]: http://techno.org/electronic-music-guide/
+[neo4j]: http://neo4j.com/
+[ruby]: https://www.ruby-lang.org/
