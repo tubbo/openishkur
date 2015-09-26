@@ -15,9 +15,11 @@ jQuery ->
       graph =
         nodes: new vis.DataSet(graphData.nodes)
         edges: new vis.DataSet(graphData.edges)
-      options = {}
+      options =
+        interaction:
+          navigationButtons: true
+          zoomView: false
       network = new vis.Network(graphContainer[0], graph, options)
-
       network.on 'click', (params) ->
         genreID = params.nodes[0]
         if genreID?

@@ -1,3 +1,10 @@
 #graph {
   height: 500px;
 }
+
+#genre {
+  .description {
+    height: 300px;
+    overflow: scroll;
+  }
+}
