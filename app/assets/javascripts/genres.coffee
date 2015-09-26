@@ -12,5 +12,6 @@ jQuery ->
 
       network.on 'click', (params) ->
         genreID = params.nodes[0]
-        $.get "/genres/#{genreID}", (genre) ->
-          $('#genre').showGenre(genre)
+        if genreID?
+          $.get "/genres/#{genreID}", (genre) ->
+            $('#genre').showGenre(genre)

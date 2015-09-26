@@ -1,3 +1,3 @@
 = link_to sample.decorate.href, class: 'sample', title: t(:sample, number: sample.number), data: { artist: sample.artist, track: sample.track } do
   = sample.number
-  = audio_tag attachment_url(sample, :file), loop: true, autoplay: true, controls: false
+  = audio_tag attachment_url(sample, :file), loop: true, controls: false

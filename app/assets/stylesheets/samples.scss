@@ -1,10 +1,19 @@
-.sample, .stop {
+$sampleSize: 30px;
+.sample {
+  display: inline-block;
+  width: $sampleSize;
+  height: $sampleSize;
+  border-radius: $sampleSize / 2;
+  font-size: 20px;
+  color: #fff;
+  line-height: $sampleSize;
+  text-align:center;
+  background:#000;
+  padding: 1px;
+
   audio {
     display: none;
   }
-
-  border: 1px solid white;
-  border-radius: 15px;
 
   &:hover {
     background: white;
@@ -21,8 +30,17 @@
   }
 }
 
+.stop {
+  padding: 5px;
+  border: 1px solid white;
+}
+
 .current-sample {
   .part {
     display: none;
   }
+}
+
+#artist, #track {
+  min-width: 100px;
 }

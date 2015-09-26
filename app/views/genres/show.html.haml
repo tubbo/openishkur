@@ -13,14 +13,16 @@
     .large-12.columns
       - genre.samples.each do |sample|
         = render sample
-      - if genre.samples.any?
-        = link_to icon('stop'), '#', class: 'stop has-tip', title: t(:stop)
       - if logged_in?
         = link_to icon('plus'), new_genre_sample_path(genre), class: 'has-tip', title: t(:add)
   .current-sample.row
     .large-2.columns
       .part= t(:artist)
       .part= t(:track)
-    .large-10.columns
+    .large-9.columns
       #artist &nbsp;
       #track &nbsp;
+    .large-1.columns
+    - if genre.samples.any?
+      = link_to icon('stop'), '#', class: 'stop has-tip', title: t(:stop)
+
