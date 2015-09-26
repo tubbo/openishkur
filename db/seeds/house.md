@@ -1,7 +1,17 @@
 ---
 name: House
-antecedents: dub, disco, italo
-descendants: acid, garage, hip, deep, techno_dance, tribal, italo
+antecedents:
+  - dub
+  - disco
+  - italo
+descendants:
+  - acid_house
+  - new_york_garage
+  - hip_house
+  - deep_house
+  - techno_dance
+  - tribal_house
+  - italo_disco
 ---
 
 House is the most soulful genre. It's also the simplest, the oldest, the
