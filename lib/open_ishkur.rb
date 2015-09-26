@@ -10,10 +10,4 @@ module OpenIshkur
     Seeds.eager_load!
     super
   end
-
-  def self.seed!
-    seed_files.each do |path|
-      Seed.populate! path
-    end
-  end
 end

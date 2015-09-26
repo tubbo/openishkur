@@ -10,6 +10,8 @@ class GenresController < ApplicationController
     Genre.find(params[:id]).decorate
   end
 
+  expose :revision, ancestor: :genre
+
   expose :influences do
     Influence.all
   end
@@ -32,21 +34,11 @@ class GenresController < ApplicationController
     render :new
   end
 
-  def edit
-    authorize genre
-    render :edit
-  end
-
   def create
     @genre = Genre.new edit_params
     authorize @genre
     @genre.save
     respond_with @genre
-  end
-
-  def update
-    genre.update(edit_params)
-    respond_with genre
   end
 
   def destroy

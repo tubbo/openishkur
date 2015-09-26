@@ -1,0 +1,5 @@
+- cache "#{genre}/revision" do
+  = simple_nested_form_for revision do |f|
+    = f.input :name, value: genre.name
+    = f.input :description, as: :text, value: genre.description
+    = f.submit

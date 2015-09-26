@@ -1,3 +1,3 @@
 - title 'New Sample'
-= simple_form_for sample do |f|
+= simple_form_for [genre, sample], data: { genre: genre.id }, do |f|
   = render 'fields', form: f

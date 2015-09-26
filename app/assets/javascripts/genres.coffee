@@ -1,6 +1,14 @@
 jQuery ->
-  graphContainer = $('#graph')
+  $('.edit_genre, .new_genre').on 'ajax:success', (event, response) ->
+    $('#genre').html(response)
+    $('#editor').foundation('reveal', 'close')
 
+  $('.new_sample').on 'ajax:success', ->
+    id = $(this).attr 'data-genre'
+    $('#editor').foundation('reveal', 'close')
+    $.get "/genres/#{id}", (response) -> $('#genre').html(response)
+
+  graphContainer = $('#graph')
   if graphContainer.length
     graphDataURL = "/genres.json"
     $.getJSON graphDataURL, (graphData) ->
