@@ -13,10 +13,6 @@ RSpec.describe GenreDecorator do
     subject.send :h
   end
 
-  it "generates node cache key" do
-    expect(subject.node_cache_key).to match(%r{genres/graph/\d{10}/genres})
-  end
-
   it "formats description" do
     expect(subject.description).to eq(h.simple_format(genre.description))
   end
