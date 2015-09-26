@@ -10,9 +10,12 @@ class Genre
     property :approved_on, type: Date
 
     has_one :out, :genre
+    has_one :out, :user
 
-    validates :name, presence: true
+    validates :name,        presence: true
     validates :description, presence: true
+    validates :user,        presence: true
+
     validate :changes_made
     validate :approval_not_set, on: :create
 
