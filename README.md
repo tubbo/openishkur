@@ -1,6 +1,9 @@
 # The OpenIshkur Project
 
 [![Build Status](https://travis-ci.org/tubbo/openishkur.svg?branch=master)](https://travis-ci.org/tubbo/openishkur)
+[![Code Climate](https://codeclimate.com/github/tubbo/openishkur/badges/gpa.svg)](https://codeclimate.com/github/tubbo/openishkur)
+[![Test Coverage](https://codeclimate.com/github/tubbo/openishkur/badges/coverage.svg)](https://codeclimate.com/github/tubbo/openishkur/coverage)
+[![Inline docs](http://inch-ci.org/github/tubbo/openishkur.svg?branch=master)](http://inch-ci.org/github/tubbo/openishkur)
 [![Join the chat at https://gitter.im/tubbo/openishkur](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tubbo/openishkur?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 OpenIshkur is an open-source, freely editable version of
