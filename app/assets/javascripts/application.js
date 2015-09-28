@@ -9,6 +9,7 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require_self
+//= require graph
 //= require_tree .
 
 $.turbo.use('page:load', 'page:fetch', 'ajax:complete');
