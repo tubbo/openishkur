@@ -39,6 +39,6 @@ module OpenIshkur
 
     # Configure Neo4J
     config.neo4j.session_type = :server_db
-    config.neo4j.session_path = ENV['GRAPHENEDB_URL'] || 'http://localhost:7474'
+    config.neo4j.session_path = Rails.application.secrets.neo4j_session_path
   end
 end

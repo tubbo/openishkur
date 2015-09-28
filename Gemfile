@@ -42,7 +42,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'spring-commands-sidekiq'
   gem 'guard-rails'
   gem 'guard-livereload'
   gem 'guard-bundler'
@@ -70,6 +69,6 @@ group :production do
   gem 'redis-rails'
   gem 'asset_sync'
   gem 'refile-s3'
-  gem 'sidekiq'
   gem 'rails_12factor'
+  gem 'new_relic'
 end
