@@ -3,7 +3,7 @@ if defined? AssetSync
     config.fog_provider = 'AWS'
     config.aws_access_key_id = Rails.application.secrets.aws_access_key_id
     config.aws_secret_access_key = Rails.application.secrets.aws_secret_access_key
-    config.fog_directory = '/'
+    config.fog_directory = 'files.openishkur.com'
     config.cdn_distribution_id = Rails.application.secrets.cloudfront_distro_id
     config.invalidate = ['application.js', 'application.css']
     config.fog_region = 'us-east-1'
