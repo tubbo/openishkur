@@ -9,7 +9,7 @@ class Genre
 
   has_many :in, :samples, type: false
 
-  has_many :out, :antecedents, model_class: 'Genre', rel_class: 'Influence'
+  # has_many :out, :antecedents, model_class: 'Genre', rel_class: 'Influence'
   has_many :out, :descendants, model_class: 'Genre', rel_class: 'Influence'
 
   validates :name,        presence: true
@@ -19,6 +19,12 @@ class Genre
 
   mappings dynamic: 'false' do
     indexes :name, type: 'string'
+  end
+
+  def antecedents
+    Genre.all.select do |genre|
+      genre.descendants.include? self
+    end
   end
 
   def self.scoped

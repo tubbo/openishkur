@@ -19,8 +19,6 @@ module OpenIshkur
       super.tap do |model|
         model.decorate
       end
-    rescue
-      super
     end
   end
 end

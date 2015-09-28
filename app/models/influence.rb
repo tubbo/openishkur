@@ -1,12 +1,13 @@
 # Describes the relationship between two Genres on the graph.
 class Influence
   include Neo4j::ActiveRel
+  include Draper::Decoratable
 
   property :direction, type: String
 
   from_class 'Genre'
   to_class 'Genre'
-  type 'influence'
+  type 'influenced_by'
 
   validates :direction, presence: true, inclusion: {
     in: %w(antecedent descendant)

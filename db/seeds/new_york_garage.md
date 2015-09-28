@@ -1,7 +1,5 @@
 ---
 name: Garage
-antecedents:
-  - house
 descendants:
   - house
 ---

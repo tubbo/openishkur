@@ -9,7 +9,9 @@ class GenresController < ApplicationController
   end
 
   expose :revision, ancestor: :genre
-  expose :influences
+  expose :influences do
+    Influence.all.map(&:decorate)
+  end
 
   # Index page, all genres graph
   def index

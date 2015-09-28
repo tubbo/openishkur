@@ -1,7 +1,5 @@
 ---
 name: Deep House
-antecedents:
-  - house
 ---
 
 This genre is to House music like Superman is to the Superfriends:

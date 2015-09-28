@@ -1,7 +1,5 @@
 ---
 name: Dub
-descendants:
-  - house
 ---
 
 This kind of stuff's been around at least for 30 years. Take reggae,

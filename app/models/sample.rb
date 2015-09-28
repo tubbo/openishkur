@@ -20,6 +20,7 @@ class Sample
 
   before_validation :generate_number
 
+  validates :genre, presence: true
   validates :number, presence: true, numericality: true
 
   private

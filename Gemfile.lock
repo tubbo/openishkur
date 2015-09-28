@@ -126,6 +126,7 @@ GEM
     colored (1.2)
     columnize (0.9.0)
     connection_pool (2.2.0)
+    database_cleaner (1.5.0)
     debug_inspector (0.0.2)
     decent_exposure (2.3.2)
     devise (3.5.2)
@@ -471,6 +472,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.4)
     railties (4.2.4)
       actionpack (= 4.2.4)
       activesupport (= 4.2.4)
@@ -561,6 +567,8 @@ GEM
       json (~> 1.0)
       redis (~> 3.2, >= 3.2.1)
       redis-namespace (~> 1.5, >= 1.5.2)
+    sigma-rails (1.0.2)
+      railties (>= 3.1)
     simple_form (3.2.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -617,6 +625,7 @@ DEPENDENCIES
   autoprefixer-rails
   capybara
   coffee-rails
+  database_cleaner
   decent_exposure
   devise
   devise-neo4j
@@ -650,6 +659,7 @@ DEPENDENCIES
   rack-cache
   rails (~> 4.2)
   rails-assets-vis!
+  rails_12factor
   redis-rails
   refile
   refile-s3
@@ -658,6 +668,7 @@ DEPENDENCIES
   rubocop
   sass-rails
   sidekiq
+  sigma-rails
   simple_form
   spring
   spring-commands-rspec

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Genre::RevisionDecorator do
+RSpec.describe Genre::RevisionDecorator do
 end

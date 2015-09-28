@@ -1,27 +1,7 @@
 jQuery ->
-  $('.edit_genre, .new_genre').on 'ajax:success', (event, response) ->
-    $('#genre').html(response)
-    $('#editor').foundation('reveal', 'close')
+  $('.edit_genre, .new_genre, .new_sample')
+    .on 'ajax:success', (genre) ->
+      $('#editor').foundation 'reveal', 'close'
+      $('#genre').showGenre(genre)
 
-  $('.new_sample').on 'ajax:success', ->
-    id = $(this).attr 'data-genre'
-    $('#editor').foundation('reveal', 'close')
-    $.get "/genres/#{id}", (response) -> $('#genre').html(response)
-
-  graphContainer = $('#graph')
-  if graphContainer.length
-    graphDataURL = "/genres.json"
-    $.getJSON graphDataURL, (graphData) ->
-      graph =
-        nodes: new vis.DataSet(graphData.nodes)
-        edges: new vis.DataSet(graphData.edges)
-      options =
-        interaction:
-          navigationButtons: true
-          zoomView: false
-      network = new vis.Network(graphContainer[0], graph, options)
-      network.on 'click', (params) ->
-        genreID = params.nodes[0]
-        if genreID?
-          $.get "/genres/#{genreID}", (genre) ->
-            $('#genre').showGenre(genre)
+  $('#graph').makeGraph '/genres.json'

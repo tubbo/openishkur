@@ -30,6 +30,7 @@ gem 'jquery-turbolinks'
 gem 'lodash-rails'
 gem 'jquery-tokeninput-rails'
 gem 'font-awesome-sass'
+gem 'sigma-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-vis'
@@ -61,6 +62,7 @@ group :test do
   gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'database_cleaner'
 end
 
 group :production do
@@ -69,4 +71,5 @@ group :production do
   gem 'asset_sync'
   gem 'refile-s3'
   gem 'sidekiq'
+  gem 'rails_12factor'
 end

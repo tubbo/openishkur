@@ -1,7 +1,5 @@
 ---
 name: Techno Dance
-antecedents:
-  - house
 ---
 
 And then all of a sudden, without word or warning, electronic music was

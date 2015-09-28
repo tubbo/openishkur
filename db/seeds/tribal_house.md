@@ -1,7 +1,5 @@
 ---
 name: Tribal House
-antecedents:
-  - house
 ---
 
 I'm probably splitting hairs here by describing each and every flavour

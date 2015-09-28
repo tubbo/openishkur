@@ -66,7 +66,6 @@ module OpenIshkur
         errors[:genre] << record.errors unless record.persisted?
         persisted?
       end
-
     end
   end
 end

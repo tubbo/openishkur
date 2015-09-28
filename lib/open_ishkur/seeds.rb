@@ -20,15 +20,17 @@ module OpenIshkur
     end
 
     def self.install
-      puts "Seeding genre data"
+      puts "Seeding genre graph data"
       models.each do |model|
-        model.save
-        puts model.errors.full_messages.to_sentence unless model.persisted?
+        unless model.save
+          puts model.errors.full_messages.to_sentence
+        end
       end
-      puts "Creating graph connections"
+      puts "Creating genre graph connections"
       connections.each do |connection|
-        connection.save
-        puts connection.errors.full_messages.to_sentence unless connection.persisted?
+        unless connection.save
+          puts connection.errors.full_messages.to_sentence
+        end
       end
     end
   end

@@ -49,5 +49,17 @@ RSpec.configure do |config|
 
   config.include User::ControllerTestHelpers, type: :controller
   config.include User::FeatureTestHelpers,    type: :feature
+
+  config.before :suite do
+    FactoryGirl.lint
+  end
+
+  config.before do
+    DatabaseCleaner.start
+  end
+
+  config.after do
+    DatabaseCleaner.clean
+  end
 end
 

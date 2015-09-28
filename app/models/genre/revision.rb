@@ -13,6 +13,7 @@ class Genre
     has_one :out, :user, type: :belongs_to
 
     validates :name,        presence: true
+    validates :genre,       presence: true
     validates :description, presence: true
     validates :user,        presence: true
 

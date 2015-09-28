@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe SamplesController, type: :controller do
+  let :genre do
+    create :genre
+  end
+
   let :sample do
     create :sample
   end
@@ -15,7 +19,7 @@ RSpec.describe SamplesController, type: :controller do
 
   describe "GET #new" do
     before do
-      get :new, genre_id: sample.genre.id
+      get :new, genre_id: genre.id
     end
 
     it "returns http success" do
@@ -30,26 +34,26 @@ RSpec.describe SamplesController, type: :controller do
   describe "POST #create" do
     before do
       request.env['HTTP_REFERER'] = '/'
-      post :create, sample: sample_params, genre_id: sample.genre.id
+      post :create, sample: sample_params, genre_id: genre.id
     end
 
     it "returns http success" do
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(:redirect)
     end
 
     it "uploads a new sample" do
-      expect(controller.sample).to be_valid
-      expect(controller.sample).to be_persisted
+      expect(controller.new_sample).to be_valid
+      expect(controller.new_sample).to be_persisted
     end
   end
 
   describe "DELETE #destroy" do
     before do
-      delete :destroy, id: sample.id, genre_id: sample.genre.id
+      delete :destroy, id: sample.id, genre_id: genre.id
     end
 
     it "returns http success" do
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(:redirect)
     end
 
     it "removes the selected sample" do

@@ -1,7 +1,5 @@
 ---
 name: Italo Disco
-antecedents:
-  - disco
 descendants:
   - house
 ---

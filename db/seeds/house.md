@@ -1,9 +1,8 @@
 ---
 name: House
 antecedents:
-  - dub
   - disco
-  - italo_disco
+  - dub
 descendants:
   - acid_house
   - new_york_garage
