@@ -3,3 +3,7 @@ rvm: 2.2.2
 services:
   - elasticsearch
   - neo4j
+addons:
+  codeclimate:
+    repo_token:
+      secure: WottrZlkHoWsaDB2NGYepN2kOqtxLGPCeHfeOO+zRFgvaM+l0ySKr80Blym9E2j+mhKmREgLr+aDO1dvb4fdwlsSbMLA8M9ZRWr8lyOC6cxTOacdWowRi37l192aM0K5CyyRBw6Jx/YbzLrJFnOTunOcgqXEmat6Wt5SlxupmtA=
