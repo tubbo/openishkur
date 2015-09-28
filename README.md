@@ -1,5 +1,7 @@
 # The OpenIshkur Project
 
+[![Join the chat at https://gitter.im/tubbo/openishkur](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tubbo/openishkur?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 OpenIshkur is an open-source, freely editable version of
 [Ishkur's Guide to Electronic Music][ishkursguide] that attempts to
 document the connections between music genres as well as provide both
