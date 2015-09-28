@@ -70,5 +70,5 @@ group :production do
   gem 'asset_sync'
   gem 'refile-s3'
   gem 'rails_12factor'
-  gem 'new_relic'
+  gem 'newrelic_rpm'
 end
