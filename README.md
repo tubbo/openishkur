@@ -1,5 +1,7 @@
 # The OpenIshkur Project
 
+[![Build Status](https://travis-ci.org/tubbo/openishkur.svg?branch=master)](https://travis-ci.org/tubbo/openishkur)
+
 OpenIshkur is an open-source, freely editable version of
 [Ishkur's Guide to Electronic Music][ishkursguide] that attempts to
 document the connections between music genres as well as provide both
